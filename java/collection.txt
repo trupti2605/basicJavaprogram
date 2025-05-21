@@ -1,0 +1,119 @@
+Java provides a Collection Framework, which is a set of interfaces and classes that help in storing and 
+processing data efficiently. 
+It includes different types of collections such as List, Set, Queue, and Map.
+
+Collection	Allows Duplicates?	Maintains Order?	Example Implementation
+List	         ✅ Yes	                  ✅ Yes	       ArrayList, LinkedList
+Set	         ❌ No	                  ❌ No	               HashSet, TreeSet
+Queue	         ✅ Yes	                  ✅ FIFO Order	       LinkedList, PriorityQueue
+Map	         ❌ No (Keys)	          ❌ No	               HashMap, TreeMap
+
+******************************************************************************************
+1. List (Ordered Collection with Duplicates Allowed)
+A List allows duplicate elements and maintains the order in which elements are inserted.
+
+Example: Using ArrayList
+import java.util.*;
+
+public class ListExample {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();  // Creating a List
+
+        names.add("Alice");  // Adding elements
+        names.add("Bob");
+        names.add("Alice");  // Duplicates are allowed
+
+        System.out.println(names);  // Output: [Alice, Bob, Alice]
+        
+        // Access elements by index
+        System.out.println("First element: " + names.get(0));
+    }
+}
+
+🔹 Key Points:
+✔ Allows duplicate values
+✔ Maintains insertion order
+✔ Access elements using index
+
+**********************************************************************************************
+
+2. Set (Unique Elements, No Duplicates Allowed)
+A Set does not allow duplicate elements and does not maintain order.
+
+Example: Using HashSet
+import java.util.*;
+
+public class SetExample {
+    public static void main(String[] args) {
+        Set<Integer> numbers = new HashSet<>();  // Creating a Set
+
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(10);  // Duplicate value (ignored)
+
+        System.out.println(numbers);  // Output: [10, 20] (Order may vary)
+    }
+}
+🔹 Key Points:
+✔ No duplicate values
+✔ No guarantee of order
+****************************************************************************
+3. Queue (FIFO - First In, First Out Order)
+A Queue follows the FIFO principle (First In, First Out), meaning elements are processed in the order they were added.
+
+Example: Using LinkedList as a Queue
+import java.util.*;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();  // Creating a Queue
+
+        queue.add("Task1");
+        queue.add("Task2");
+        queue.add("Task3");
+
+        System.out.println(queue);  // Output: [Task1, Task2, Task3]
+
+        queue.poll();  // Removes first element (Task1)
+
+        System.out.println(queue);  // Output: [Task2, Task3]
+    }
+}
+🔹 Key Points:
+✔ Follows FIFO (First In, First Out)
+✔ add() adds elements, poll() removes the first element
+
+*************************************************************************
+4. Map (Key-Value Pair Storage, No Duplicate Keys)
+A Map stores data as key-value pairs, where each key must be unique.
+
+Example: Using HashMap
+import java.util.*;
+
+public class MapExample {
+    public static void main(String[] args) {
+        Map<Integer, String> studentMap = new HashMap<>();  // Creating a Map
+
+        studentMap.put(101, "Alice");
+        studentMap.put(102, "Bob");
+        studentMap.put(101, "Charlie");  // Updating value for key 101
+
+        System.out.println(studentMap);  // Output: {101=Charlie, 102=Bob}
+
+        System.out.println("Student 101: " + studentMap.get(101));  // Output: Charlie
+    }
+}
+🔹 Key Points:
+✔ Stores data as key-value pairs
+✔ Keys must be unique, but values can be duplicated
+✔ Fast retrieval using keys
+
+***********************************************************************
+
+
+
+
+
+
+
+

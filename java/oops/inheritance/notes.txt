@@ -1,0 +1,33 @@
+Multiple inheritance
+//java does not support mutliple inheritance directly
+we ca acheive using 1)interface and 2)abstract keyword
+
+**interface**
+// interface acheive 100% abstraction
+// interface-->implementes-->class
+// interface-->extends-->interface
+//we can declare method and fields inside the interface
+ methods are bydegault public in interface if we forget to wrote public compiler automatically gets interface
+ //and the fieldsare default public static final
+    eg. interface test{
+        public void show();//methods
+        public static final int a =3;//fields
+    
+    }
+//we can not create the object of interface and abstract class also
+//form java 8 compiler allow to create concreat methodsinsode the interface
+ eg 1) default void display()
+ {
+    //stmt
+ }
+    eg 2) public static void run(){}
+//from java 9 it allows to create private methods also
+    interface run
+    {
+        private void stop(){}
+    }
+
+**using abstract keyword**
+//if method is abstract then class must be abstract
+//if class is abstract then it is not mandotory methods should be abstract
+//we can not create object of abstract class
